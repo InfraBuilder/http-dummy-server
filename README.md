@@ -17,6 +17,8 @@ This application is a simple HTTP server written in Go. It responds to all incom
 
 ## Running the Application
 
+### With Go
+
 Set the environment variables `HTTP_RESPONSE_BODY` and `HTTP_RESPONSE_CODE` as needed. For example, in a Unix-like shell, you can set them as follows:
    
    ```shell
@@ -26,6 +28,21 @@ Set the environment variables `HTTP_RESPONSE_BODY` and `HTTP_RESPONSE_CODE` as n
    ```
 
 The server will start and listen on port 8080.
+
+### With Docker
+
+Set the environment variables `HTTP_RESPONSE_BODY` and `HTTP_RESPONSE_CODE` as needed. For example, in a Unix-like shell, you can set them as follows:
+   
+   ```shell
+   docker run -it --rm \
+      -p 8080:8080 \
+      -e HTTP_RESPONSE_BODY="Maintenance here" \
+      -e HTTP_RESPONSE_CODE=503 \
+      infrabuilder/http-dummy-server
+   ```
+
+The server will start and listen on port 8080.
+
 
 ## Accessing the Server
 
